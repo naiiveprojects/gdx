@@ -33,6 +33,7 @@ jobs:
             cache-name: windows-template
             target: release
             tools: false
+            bin: "./bin/godot.windows.opt.64.exe"
 
     steps:
       - uses: actions/checkout@v4
