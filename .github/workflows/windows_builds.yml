@@ -63,7 +63,7 @@ jobs:
 
       - name: Download UPX
         run: |
-          Invoke-WebRequest -Uri "https://github.com/upx/upx/releases/download/v3.96/upx-3.96-win64.zip" -OutFile "upx.zip"
+          Invoke-WebRequest -Uri "https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip" -OutFile "upx.zip"
           Expand-Archive -Path "upx.zip" -DestinationPath "."
           Remove-Item -Path "upx.zip"
 
@@ -71,7 +71,7 @@ jobs:
         run: .\upx-3.96-win64\upx.exe ${{ matrix.bin }}
 
       - name: Upload artifact
-        uses: ./.github/actions/upload-artifact
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.cache-name }}
           path: ${{ matrix.bin }}
