@@ -68,7 +68,7 @@ jobs:
           Remove-Item -Path "upx.zip"
 
       - name: Compress binary with UPX
-        run: .\upx-3.96-win64\upx.exe ${{ matrix.bin }}
+        run: .\upx-4.2.4-win64\upx.exe ${{ matrix.bin }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
